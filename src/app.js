@@ -3,7 +3,9 @@ const path = require("path");
 const app = express();
 const hbs = require("hbs");
 const geocode=require('./utils/geocode')
-const forecast=require('./utils/forecast')
+const forecast=require('./utils/forecast');
+const { prototype } = require("module");
+const port=process.env.PORT ||3000
 //Define paths for express config
 const publicDirectoryPaths = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../templates/views");
@@ -87,6 +89,7 @@ app.get("*", (req, res) => {
     title: "404",
   });
 });
-app.listen(4000, () => {
-  console.log("Server is up on port 4000.");
+
+app.listen(port, () => {
+  console.log("Server is up on port",port);
 });
