@@ -22,7 +22,7 @@ weatherForm.addEventListener('submit',(e)=>{
    messageOne.textContent=data.error
              }else{
            messageOne.textContent=data.location;
-           messageTwo.textContent="Its is currently "+data.forecast.temperature+" degrees and feels like "+data.forecast.feelsLike+" degrees"
+           messageTwo.textContent="Its is currently "+data.forecast.temperature+" degrees and feels like "+data.forecast.feelsLike+" degrees"+"Humidity is "+data.forecast.humidity
              }
     })
 })
